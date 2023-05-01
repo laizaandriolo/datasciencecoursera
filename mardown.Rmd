@@ -8,7 +8,6 @@ output: html_document
 
 Loading library
 ```{r}
-knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 library(lubridate)
 ```
@@ -16,7 +15,7 @@ library(lubridate)
 Loading and preprocessing the data
 
 ```{r activity, echo=TRUE}
-df <- read.csv("activity.csv")
+df <- read.csv("C:\\Users\\laiza\\OneDrive\\Área de Trabalho\\analytics\\repdata_data_activity\\activity.csv")
 df$date <- ymd(df$date)
 #df$date <- as.Date(df$date, "%Y-%m-%d")
 ```
@@ -86,7 +85,7 @@ noMissingValue
 
 My strategy for filling in missing values (NAs) is to substitute the missing values (steps) with the average number of steps based on both the 5-minute interval and the day of the week.
 ```{r, include=TRUE, echo=TRUE}
-fullData1 <- read.csv("activity.csv", header=TRUE,sep=",")
+fullData1 <- read.csv("C:\\Users\\laiza\\OneDrive\\Área de Trabalho\\analytics\\repdata_data_activity\\activity.csv", header=TRUE,sep=",")
 
 # Create a variable/column with weekdays name
 fullData1$day <- weekdays(as.Date(fullData1$date))
